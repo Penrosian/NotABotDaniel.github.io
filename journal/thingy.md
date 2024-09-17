@@ -1,3 +1,3 @@
 # My journey learning the terminal
 
-Lorem ipsum evnjeq riqjn qwrjinq vqerjnv, qjnqi qerijnvq qjerngq. ewjnvq qkjrnfqkjrn  jvqn rkvqj erkqj ekrj qer jeo rjnoe nqoi noqin oqjno jnq o jnqo njoqjn ojqn ojqn o jnqo jkneo jneqo ino enoqin oinq oin oinqoin oqjn oqn oqn oqjn oejn oj neoqjn ojn.
+First, I learned how to use cd to navigate around the terminal and ls to see where I could go. Then, I learned how to make directoies and files. After that, I learned how to add files to github. And just now, I learned to use vim. 
