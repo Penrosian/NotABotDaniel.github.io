@@ -8,4 +8,4 @@ In my journal, i will write about:
 
 ## here's my journal entires
 
-- [Learning the terminal](thingy.md)
+- [Learning the terminal](entires/thingy.md)
