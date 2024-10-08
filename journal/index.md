@@ -8,6 +8,8 @@ In my journal, i will write about:
 
 ## here's my journal entires
 
+- [testing markdown](entries/testmd.md)
+
 - [Learning the terminal](entries/thingy.md)
 
 - [Taking notes for math](entries/journal2.md)
