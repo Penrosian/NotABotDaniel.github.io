@@ -9,3 +9,5 @@ In my journal, i will write about:
 ## here's my journal entires
 
 - [Learning the terminal](entries/thingy.md)
+
+- [Taking notes for math](entries/journal2.md)
