@@ -8,17 +8,17 @@ Bellow are my notes for my math class. I was required to take these notes to sho
 
 You should hsve these memorized.
 
-|Root|Square|
-|1|1|
-|2|4|
-|3|9|
-|4|16|
-|5|25|
-|6|36|
-|7|49|
-|8|64|
-|9|81|
-|10|100|
+| Root | Square |
+| 1 | 1 |
+| 2 | 4 |
+| 3 | 9 |
+| 4 | 16 |
+| 5 | 25 |
+| 6 | 36 |
+| 7 | 49 |
+| 8 | 64 |
+| 9 | 81 |
+| 10 | 100 |
 
 ## Simplifying Non-Perfect Square Roots
 
