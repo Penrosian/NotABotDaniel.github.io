@@ -9,6 +9,7 @@ Bellow are my notes for my math class. I was required to take these notes to sho
 You should hsve these memorized.
 
 | Root | Square |
+| ---- | ----- |
 | 1 | 1 |
 | 2 | 4 |
 | 3 | 9 |
@@ -33,6 +34,7 @@ $\sqrt{12}$ seperates into $\sqrt{4}*\sqrt{3}$ which simplifyies to $2\sqrt{3}$
 You shoudl know the first few of these. (like the first 5)
 
 |Root|Cube|
+| -- | -- |
 |1|1|
 |2|8|
 |3|27|
@@ -50,5 +52,5 @@ Cube roots work the same way as square roots eccept you have to look for perfect
 
 ### Example:
 
-$\cbrt{16}$ can seperate into $\cbrt{8}*\cbrt{2}$ which simplifyies into $2\cbrt{2}$
+$\sqrt[3]{16}$ can seperate into $\sqrt[3]{8}*\sqrt[3]{2}$ which simplifyies into $2\sqrt[3]{2}$
 
