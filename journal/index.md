@@ -13,3 +13,6 @@ In my journal, i will write about:
 - [Learning the terminal](entries/thingy.md)
 
 - [Taking notes for math](entries/journal2.md)
+
+- [My Wordpress website](entries/journal3.html)
+
