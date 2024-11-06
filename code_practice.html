@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <Head>
-	<title>html lesson: the File Tree</title>
+	<title>HTML Lesson: The File Tree</title>
 	<script src="js/init.js"></script>	
 
 </head>
@@ -15,8 +15,7 @@
 
 	<p>The idea is that when in any folder in the terminal, you know your location and the path you took to get there.</p>
 	
-	<ul>
-	<li>Example:
+	<ul><li>Example:
 	<ol type="1">
 		<li><code>/</code></li>
 		<li><code>User</code></li>
@@ -24,20 +23,67 @@
 		<li><code>Website</code></li>
 		<li><code>Index.html</code></li>
 	</ol>
-	</li>
-	</ul>
+	</li></ul>
 
 	<p>"<code> / </code>" is at the top. Under it, everything on your computer is stored. In "<code> user </code>" there are several folders for stuff stored on your computer.</p>
 	
-	<ul>
-	<li>This includes:
+	<ul><li>This includes:
 	<ul>
 		<li><code>Desktop</code></li>
 		<li><code>Documents</code></li>
 		<li><code>Downloads</code></li>
+                <li><code>Library</code></li>
+                <li><code>Movies</code></li>
+                <li><code>Music</code></li>
+                <li><code>Pictures</code></li>
+                <li><code>public_key</code></li>
 	</ul>
-	</li>
+	</li></ul>
+
+	<p>The files on your computer can also be organised in list format like the one  displayed below.</p>
+
+	<ul>
+		<li><code>/</code>
+			<ul>
+				<li><code>Desktop</code>
+					<ul>
+						<li><code>Website</code></li>
+						<li><code>screenshots</code></li>
+					</ul>
+				</li>
+				<li><code>Documents</code>
+					<ul>
+						<li><code>PDF files</code></li>
+						<li><code>Docs files</code></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
 	</ul>
 
+	<p>Here is the html syntax for a list like this.</p>
+	
+	<pre><code>
+		&lt;ul&gt; 
+			&lt;li&gt; / 
+				&lt;ul&gt;	
+					&lt;li&gt;Desktop
+						&lt;ul&gt;
+							&lt;li&gt;Website&lt;/li&gt;
+							&lt;li&gt;Screenshots&lt;/li&gt;
+						&lt;/ul&gt;
+					&lt;/li&gt;
+					&lt;li&gt;Documents
+						&lt;ul&gt;
+							&lt;li&gt;PDF files&lt;/li&gt;
+							&lt;li&gt;Docs files&lt;/li&gt;
+						 &lt;/ul&gt;
+					&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	</code></pre>
+
 </body>
+</html>
 
