@@ -82,6 +82,25 @@ function renderValidationResults(data) {
         </p>
     `;
 
+	if(window.location.href.startsWith("file://") && !isHTMLValid) {
+        ValidatorHTML += `<p>There might be multiple errors. Here is the first one:</p>
+        <table>
+        <thead>
+        <tr>
+        <th>Code</th>
+        <th>Error Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td><code>${data['messages'][0]['extract'].replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;')}</code></td>
+        <td>` + data['messages'][0]['message'] + `</td> 
+        </tr>
+        </tbody>
+        </table>`
+        
+        }
+
     let footer = document.querySelector('footer');
     if (!footer) {
         footer = document.createElement('footer');
