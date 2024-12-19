@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Grid Practice</title> 
+        <script src="../js/init.js"></script>
+        <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="../styles.css">
+	<style>
+#grid {
+	display:grid;
+	grid-template-rows: repeat(16,1fr);
+	grid-template-columns: repeat(16,1fr);
+	height:80vh;
+}
+#green {
+	grid-column-start:7;
+	grid-column-end:9;
+	grid-row-start:7;
+	grid-row-end:9;
+	background-color:green;
+
+}
+#red {
+	grid-column-start:9;
+	grid-column-end:11;
+        grid-row-start:9;
+        grid-row-end:11;
+        background-color:red;
+
+}
+
+	</style>
+
+</head>
+<body>
+<header>
+	<h1>Grid Practice!</h1>
+
+</header>
+<main>
+	<div id="grid">
+		<div id="green">
+			<p>Blah</p>
+
+		</div>
+		<div id="red">
+			<p>blah</p>
+
+		</div>
+	</div>
+
+
+</main>
+</body>
+</html>

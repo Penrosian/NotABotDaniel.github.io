@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title> Daniel's website </title> 
+        <script src="../js/init.js"></script>
+        <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="styles.css">
+	<style>
+body {
+	display:grid;
+	grid-template-rows: 1fr 3fr 1fr 1fr;
+	grid-template-columns: 1fr 3fr 1fr;
+	height:80vh;
+	text-align:center;
+	font-size:4em;
+	gap:10px;
+
+}
+#head {
+	grid-column-start:1;
+	grid-column-end:4;
+	grid-row-start:1;
+	grid-row-end:2;
+	background-color:green;
+
+}
+#leftSide {
+	grid-column-start:1;
+	grid-column-end:2;
+	grid-row-start:2;
+	grid-row-end:3;
+	background-color:green;
+
+}
+#main {
+	grid-column-start:2;
+        grid-column-end:3;
+        grid-row-start:2;
+        grid-row-end:3;
+        background-color:green;
+
+}
+#rightSide {
+	grid-column-start:3;
+        grid-column-end:4;
+        grid-row-start:2;
+        grid-row-end:3;
+        background-color:green;
+
+}
+#foot {
+	grid-column-start:1;
+	grid-column-end:4;
+	grid-row-start:3;
+	grid-row-end:4;
+	background-color:green;
+
+}
+footer {
+	grid-column-start:1;
+	grid-column-end:4;
+	grid-row-start:4;
+	grid-row-end:5;
+
+}
+	
+	</style>
+
+</head>
+<body>
+	<div id="head">
+		<h1>HEAD</h1>
+	</div>
+	<div id="leftSide">
+		<h1>SIDE</h1>
+
+	</div>
+	<div id="main">
+		<h1>MAIN</h1>
+
+	</div>
+	<div id="rightSide">
+		<h1>SIDE</h1>
+
+	</div>
+	<div id="foot">
+		<h1>FOOT</h1>
+	</div>
+
+</body>
+</html>
+
