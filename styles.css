@@ -1,20 +1,67 @@
 body {
-	background-color:rgb(0,15,30);
+	background-color:#000f1e;
 	color:cyan;
-	font-family:"Oswald",sans-serif;
+	font-family:"Oswald", "Helvetica", sans-serif;
 	font-weight:200;
-	font-style: ;
 
 }
 header {
 	background-color:cyan;
 	color:black;
+	text-align:center;
+	padding-top:1px;
+	padding-bottom:5px;
+	margin-bottom:10px;
+}
+nav {
+	background-color:#780067;
+	text-align:center;
+	display:grid;
+	grid-template-rows: 1fr 4fr;
+	grid-template-columns: repeat(3, 1fr);
+	height:50px;
+	margin-bottom:10px;
+
+}
+#homeLink {
+	grid-column-start:1;
+	grid-column-end:2;
+	grid-row-start:2;
+	padding:7px;
+
+}
+#journalLink {
+	grid-column-start:2;
+	grid-column-end:3;
+	grid-row-start:2;
+	padding:7px;
+
+}
+#projectsLink {
+	grid-column-start:3;
+	grid-column-end:4;
+	grid-row-start:2;
+	padding:7px;
+
+}
+main {
+	margin-top:30px;
+	padding-left:20px;
+	padding-bottom:30px;
+
+}
+footer {
+	margin-top:20px;
+	border-top:1px solid cyan;
+	padding:20px;
+	color:cyan;
+
 
 }
 td,th,table {
 	border:2px solid;
 	border-collapse: collapse;
-	border-color:cyan;
+	border-color:magenta;
 }
 a {
 	color:magenta;
@@ -29,4 +76,21 @@ hr {
 .time{
 	color:magenta;
 	border-color:cyan;
+}
+#quote {
+	margin-top:50px;
+	margin-bottom:40px;
+
+}
+#EHead {
+	margin-top:40px;
+
+}
+#entries {
+	padding-left:20px;
+
+}
+.project {
+	margin-top:40px;
+
 }
