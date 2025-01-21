@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>10x10 Grid with CSS Grid</title>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      grid-template-rows: repeat(10, 1fr);
+      width: 100vmin;
+      height: 100vmin;
+      margin:auto;
+    }
+
+    .grid-container div {
+      background-color: #ddd;
+      border: 1px solid #fff; /* Optional border for better visual separation */
+    }
+
+
+    .grid-container div:nth-child(1){background-color:black}
+    .grid-container div:nth-child(2){background-color:black}
+    .grid-container div:nth-child(3){background-color:black}
+    .grid-container div:nth-child(4){background-color:black}
+    .grid-container div:nth-child(5){background-color:black}
+    .grid-container div:nth-child(6){background-color:black}
+    .grid-container div:nth-child(7){background-color:black}
+    .grid-container div:nth-child(8){background-color:black}
+    .grid-container div:nth-child(9){background-color:black}
+    .grid-container div:nth-child(10){background-color:black}
+    
+    .grid-container div:nth-child(11){background-color:black}
+    .grid-container div:nth-child(12){background-color:black}
+    .grid-container div:nth-child(13){background-color:black}
+    .grid-container div:nth-child(14){background-color:yellow}
+    .grid-container div:nth-child(15){background-color:yellow}
+    .grid-container div:nth-child(16){background-color:yellow}
+    .grid-container div:nth-child(17){background-color:yellow}
+    .grid-container div:nth-child(18){background-color:yellow}
+    .grid-container div:nth-child(19){background-color:black}
+    .grid-container div:nth-child(20){background-color:black}
+    
+    .grid-container div:nth-child(21){background-color:black}
+    .grid-container div:nth-child(22){background-color:black}
+    .grid-container div:nth-child(23){background-color:yellow}
+    .grid-container div:nth-child(24){background-color:yellow}
+    .grid-container div:nth-child(25){background-color:yellow}
+    .grid-container div:nth-child(26){background-color:yellow}
+    .grid-container div:nth-child(27){background-color:yellow}
+    .grid-container div:nth-child(28){background-color:yellow}
+    .grid-container div:nth-child(29){background-color:yellow}
+    .grid-container div:nth-child(30){background-color:black}
+    
+    .grid-container div:nth-child(31){background-color:black}
+    .grid-container div:nth-child(32){background-color:yellow}
+    .grid-container div:nth-child(33){background-color:yellow}
+    .grid-container div:nth-child(34){background-color:yellow}
+    .grid-container div:nth-child(35){background-color:yellow}
+    .grid-container div:nth-child(36){background-color:yellow}
+    .grid-container div:nth-child(37){background-color:yellow}
+    .grid-container div:nth-child(38){background-color:black}
+    .grid-container div:nth-child(39){background-color:black}
+    .grid-container div:nth-child(40){background-color:black}
+    
+    .grid-container div:nth-child(41){background-color:black}
+    .grid-container div:nth-child(42){background-color:yellow}
+    .grid-container div:nth-child(43){background-color:yellow}
+    .grid-container div:nth-child(44){background-color:yellow}
+    .grid-container div:nth-child(45){background-color:yellow}
+    .grid-container div:nth-child(46){background-color:black}
+    .grid-container div:nth-child(47){background-color:black}
+    .grid-container div:nth-child(48){background-color:black}
+    .grid-container div:nth-child(49){background-color:black}
+    .grid-container div:nth-child(50){background-color:black}
+    
+    .grid-container div:nth-child(51){background-color:black}
+    .grid-container div:nth-child(52){background-color:yellow}
+    .grid-container div:nth-child(53){background-color:yellow}
+    .grid-container div:nth-child(54){background-color:yellow}
+    .grid-container div:nth-child(55){background-color:black}
+    .grid-container div:nth-child(56){background-color:black}
+    .grid-container div:nth-child(57){background-color:white}
+    .grid-container div:nth-child(58){background-color:black}
+    .grid-container div:nth-child(59){background-color:white}
+    .grid-container div:nth-child(60){background-color:black}
+    
+    .grid-container div:nth-child(61){background-color:black}
+    .grid-container div:nth-child(62){background-color:yellow}
+    .grid-container div:nth-child(63){background-color:yellow}
+    .grid-container div:nth-child(64){background-color:yellow}
+    .grid-container div:nth-child(65){background-color:yellow}
+    .grid-container div:nth-child(66){background-color:black}
+    .grid-container div:nth-child(67){background-color:black}
+    .grid-container div:nth-child(68){background-color:black}
+    .grid-container div:nth-child(69){background-color:black}
+    .grid-container div:nth-child(70){background-color:black}
+    
+    .grid-container div:nth-child(71){background-color:black}
+    .grid-container div:nth-child(72){background-color:yellow}
+    .grid-container div:nth-child(73){background-color:yellow}
+    .grid-container div:nth-child(74){background-color:yellow}
+    .grid-container div:nth-child(75){background-color:yellow}
+    .grid-container div:nth-child(76){background-color:yellow}
+    .grid-container div:nth-child(77){background-color:yellow}
+    .grid-container div:nth-child(78){background-color:black}
+    .grid-container div:nth-child(79){background-color:black}
+    .grid-container div:nth-child(80){background-color:black}
+    
+    .grid-container div:nth-child(81){background-color:black}
+    .grid-container div:nth-child(82){background-color:black}
+    .grid-container div:nth-child(83){background-color:yellow}
+    .grid-container div:nth-child(84){background-color:yellow}
+    .grid-container div:nth-child(85){background-color:yellow}
+    .grid-container div:nth-child(86){background-color:yellow}
+    .grid-container div:nth-child(87){background-color:yellow}
+    .grid-container div:nth-child(88){background-color:yellow}
+    .grid-container div:nth-child(89){background-color:yellow}
+    .grid-container div:nth-child(90){background-color:black}
+    
+    .grid-container div:nth-child(91){background-color:black}
+    .grid-container div:nth-child(92){background-color:black}
+    .grid-container div:nth-child(93){background-color:black}
+    .grid-container div:nth-child(94){background-color:yellow}
+    .grid-container div:nth-child(95){background-color:yellow}
+    .grid-container div:nth-child(96){background-color:yellow}
+    .grid-container div:nth-child(97){background-color:yellow}
+    .grid-container div:nth-child(98){background-color:yellow}
+    .grid-container div:nth-child(99){background-color:black}
+    .grid-container div:nth-child(100){background-color:black}
+
+/*
+    /* Color specific squares 
+    .grid-container div:nth-child(1),
+    .grid-container div:nth-child(5),
+    .grid-container div:nth-child(7){
+        background-color:black;
+    }
+    
+    /* Color every even square 
+    .grid-container div:nth-child(even) {
+      background-color: #76b5c5;
+    }
+
+
+    /* Color every 3rd square 
+    .grid-container div:nth-child(3n) {
+      background-color: #ffcc5c;
+    }
+
+    /*
+        We can use this syntax to select a range:
+        - `div:nth-child(n+41)`: Selects all `div` elements that are the 41st child or later.
+        - `:nth-child(-n+50)`: Selects all `div` elements that are the 50th child or earlier.
+    .grid-container div:nth-child(n+41):nth-child(-n+50) {
+      background-color: #f78da7;
+    }
+*/
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <!-- 100 divs -->
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+  </div>
+</body>
+</html>

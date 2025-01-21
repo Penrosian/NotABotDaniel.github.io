@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title> Daniel's website </title> 
+        <script src="js/init.js"></script>
+        <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="../styles.css">
+	<style>
+header{
+
+
+}
+main{
+	display:grid;
+	grid-template-rows:1fr;
+	grid-template-columns:1fr 2fr 1fr;	
+
+}
+#left{
+	grid-row-start:1;
+	grid-row-end:2;
+	grid-column-start:1;
+	grid-column-end:2;
+}
+#main{
+	grid-row-start:1;
+	grid-row-end:2;
+	grid-column-start:2;
+	grid-column-end:3;
+
+}
+#right{
+	grid-row-start:1;
+	grid-row-end:2;
+	grid-column-start:3;
+	grid-column-end:4;
+}
+footer{
+
+
+}
+	</style>
+</head>
+<body>
+<header>
+	<h1>Title</h1>
+
+
+</header>
+<main>
+	<div id="left">
+		<p>left</p>
+	</div>
+	<div id="main">
+		<p>text</p>	
+	
+	</div>
+	<div id="right">
+		<p>right</p>
+	</div>
+</main>
+<footer>
+	<h3><strong>Syntax Validation Test</strong></h3>
+
+
+</footer>
+</body>
+</html>
