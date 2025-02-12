@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title> Daniel's website </title> 
+        <script src="../js/init.js"></script>
+        <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="../styles.css">
+    <style>
+main{
+	display:grid;
+	grid-template-rows:1fr;
+	grid-template-columns:1fr 2fr 1fr;
+
+    text-align: center;
+
+}
+#left{
+	grid-row-start:1;
+	grid-row-end:2;
+	grid-column-start:1;
+	grid-column-end:2;
+}
+#main{
+	grid-row-start:1;
+	grid-row-end:2;
+	grid-column-start:2;
+	grid-column-end:3;
+
+}
+#right{
+	grid-row-start:1;
+	grid-row-end:2;
+	grid-column-start:3;
+	grid-column-end:4;
+}
+	</style>
+
+</head>
+<body>
+    <header>
+	<h1>This is an html Form</h1>
+
+
+</header>
+<main>
+	<div id="left">
+		<form action="formPractice.html" method="get">
+            <p>What is your Email?</p>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+            <input type="submit" name="submit">
+        </form>
+
+	</div>
+	
+    <div id="main">
+		<form action="formPractice.html" method="get">
+            <p>What is your favorite animal?</p>
+            <label for="animal">Animal</label>
+            <input type="text" id="animal" name="animal">
+            <input type="submit" name="submit"> 
+        
+        </form>	
+	
+	</div>
+	
+    <div id="right">
+		<form action="formPractice.html" method="get">
+            <p>To prove your not a robot, type many random letters in this box.</p>
+            <label for="botTest">Bot Test</label>
+            <input type="text" id="botTest" name="botTest">
+            <input type="submit" name="submit">
+        </form>
+
+	</div>
+</main>
+<footer>
+	<h3><strong>Syntax Validation Test</strong></h3>
+
+</body>
+</html>

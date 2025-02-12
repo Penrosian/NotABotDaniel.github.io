@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title> Daniel's website </title> 
+        <script src="../js/init.js"></script>
+        <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon">
+	<style>
+body {
+    background-color: #f3eaf7;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+
+}
+#title {
+    font-size: 32px;
+
+}
+.qtext {
+    margin-bottom: 25px;
+
+}
+#header {
+    border-top: 10px solid #8b00ff;
+    border-left: 1px solid #dadada;
+    border-right: 1px solid #dadada;
+    border-bottom: 1px solid #dadada;
+    padding-top: 0px;
+    padding-bottom: 20px;
+
+}
+
+#header, .question {
+    margin-left: 27%;
+    margin-right: 27%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 16px;
+
+}
+.question {
+    border: 1px solid #dadada;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+input {
+
+}
+input[type=email], input[type=tel], input[type=number], #comments {
+    border: none;
+    border-bottom: 1px solid #dadada;
+    width: 98%;
+    font-size: 14px; 
+
+}
+input[type=email]:focus, input:focus[type=tel], input:focus[type=number] {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    background-color: 1px solid #8b00ff;
+
+}
+
+select {
+    width: 180px;
+    height: 50px;
+    font-size: 14px;
+
+}
+#account {
+    font-size: 14px;
+    color: #6a6a6a;
+
+}
+a {
+    font-size: 14px;
+    color: #577bfa;
+
+}
+strong {
+    font-size: 14px;
+    color: red;
+
+}
+#chose {
+    color: #bababa;
+
+}
+#submit {
+    margin-left: 27%;
+    margin-right: 27%;
+
+}
+#submitB {
+    background-color: #8b00ff;
+    color: white;
+    font-size: 14px;
+    height: 37px;
+    width: 100px;
+    border-radius: 5px;
+
+}
+#clear {
+    background-color: #f3eaf7;
+    border: 0px;
+    color: #8b00ff;
+    font-size: 16px;
+    margin-left: 65%;
+
+}
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <form action="iceCreamForm.html" method="GET">
+        <div id="header">
+            <p id="title">You're Invited to an Ice Cream Party!</0>
+            <p>Please fill out this form to help us plan.</p>
+            <hr>
+            <p id="account"><b>christopher.jones@apsva.us </b><a href="iceCreamForm.html">Switch account</a></p>
+            <p>Not shared</p>
+            <hr>
+            <strong>* indicates required question</strong>
+
+        </div>
+        <div class="question">
+            <p class="qtext"><label for="email">What is your email adress? <strong>*</strong></label><p>
+            <p><input type="email" id="email" name="email" placeholder="Your answer" required></p>
+
+        </div>
+        <div class="question">
+            <p class="qtext"><label for="phone">What is your phone number? <strong>*</strong></label></p>
+            <p><input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Your answer" required></p>
+
+        </div>
+        <div class="question">
+            <p class="qtext"><label for="people">How many people will you bring to the party? <strong>*</strong></label></p>
+            <p><input type="number" id="people" name="how many people" placeholder="Your answer" required></p>
+        
+        </div>
+        <div class="question">
+            <p class="qtext">What is your favorite flavor of ice cream?</p>
+            <p><input type="radio" id="vanila" name="favorite">
+            <label for="vanila">Vanila</label></p>
+            <p><input type="radio" id="chocoChip" name="favorite">
+            <label for="chocoChip">Choclate Chip</label></p>
+            <p><input type="radio" id="strawberry" name="favorite">
+            <label for="strawberry">Strawberry</label></p>
+            <p><input type="radio" id="other" name="favorite">
+            <label for="other">Other</label></p>
+    
+        </div>
+        <div class="question">
+            <p class="qtext">What toppings would you like?</p>
+            <p><input type="checkbox" id="sprinkles">
+            <label for="sprinkles">Sprinkles</label></p>
+            <p><input type="checkbox" id="magicShell">
+            <label for="magicShell">Magic Shell</label></p>
+            <p><input type="checkbox" id="chocoChip2">
+            <label for="chocoChip2">Choclate Chip</label></p>
+            <p><input type="checkbox" id="gummies">
+            <label for="gummies">Gummy Bears</label></p>
+            <p><input type="checkbox" id="other2">
+            <label for="other2">Other</label></p>
+    
+        </div>
+        <div class="question">
+            <p><label for="entertainment">What kind of entertainment should we have at the party?</label></p>
+            <p><select id="entertainment" name="entertainment">
+                <option value="choose" id="choose">Choose</option>
+                <option value="baloonAnimals">Balooon Animals</option>
+                <option value="bounceHouse">Bounce House</option>
+                <option value="clown">Clown</option>
+                <option value="cornhole">Cornhole</option>
+                <option value="dj">DJ</option>
+                <option value="facePainting">Face Painting</option>
+                <option value="magician">Magician</option>
+            </select></p>
+        </div>
+        <div class="question">
+            <p><label for="comments">Do you have any other suggestions or comments?</label></p>
+            <p><input type="text" name="comments" id="comments" placeholder="Your answer"></p>
+    
+        </div>
+        <div id="submit">
+            <button type="submit" id="submitB">Submit</button>
+            <button type="button" id="clear" onclick="alert('I could not figure out how to clear the form.')">Clear Form</button>
+        
+        </div>
+    </form>
+    <footer>
+
+    
+    </footer>
+</body>
