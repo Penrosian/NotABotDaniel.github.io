@@ -7,12 +7,80 @@
     <link rel="stylesheet" type="text/css" href="../styles.css">
     <style>
 .artPic {
+    display: block;
+    margin: 10px auto;
     border: 2px solid white;
     border-radius: 10px;
-    width: 275px;
-    height: 275gipx;
+    box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease-in-out;
+
 }
 
+#pic1 {
+    width: 20px;
+    height: 30px;
+    object-fit: cover;
+}
+
+#pic2 {
+    max-width: 40px;
+    min-width: 20px;
+}
+
+#pic3 {
+    max-height: 50px;
+    min-height: 25px;
+    object-fit: contain;
+}
+
+#pic4 {
+    object-fit: scale-down;
+    object-position: top;
+}
+
+#pic5 {
+    object-position: bottom right;
+}
+
+#pic6 {
+    opacity: 0.7;
+}
+
+#pic7 {
+    filter: grayscale(100%);
+}
+
+#pic8 {
+    filter: sepia(80%) contrast(120%);
+}
+
+#pic9 {
+    filter: blur(5px);
+}
+
+#pic10 {
+    position: relative;
+    z-index: 10;
+    width: 20px;
+    height: 25px;
+    background: white;
+}
+
+#pic11 {
+    position: absolute;
+    top: 500px;
+    left: 50px;
+    z-index: 5;
+}
+
+#pic12 {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
 
     </style>
 </head>
