@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Daniel's Website</title>
+	<script src="js/init.js"></script>
+    <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <style>
+
+canvas{
+    display:block;
+    border:1px solid;
+    margin:50px;
+}
+    </style>
+</head>
+<body>
+<header>
+	<h1>Self Portrait</h1>
+
+</header>
+<nav>
+    <a href="index.html" id="homeLink">Back to Projects</a>
+
+</nav>
+<main>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+        ctx.fillStyle = "#00bafc";
+        ctx.fillRect(0,0,500,500);
+        
+        ctx.fillStyle = "blue";
+        ctx.fillRect(200,175,100,150);
+        
+        ctx.fillStyle = "#ffcb97";
+        ctx.fillRect(235,150,30,25);
+
+        ctx.beginPath();
+        ctx.arc(250,120,40,0,2*Math.PI);
+        ctx.fill();
+
+        ctx.strokeStyle = "black";
+        ctx.lineWidth=4;
+        ctx.beginPath();
+        ctx.arc(251,120,40,Math.PI,1.6*Math.PI);
+        ctx.stroke();
+        
+        ctx.beginPath();
+        ctx.arc(255,122,40,1.05*Math.PI,1.55*Math.PI);
+        ctx.stroke();
+        
+        ctx.beginPath();
+        ctx.arc(259,124,40,1.1*Math.PI,1.5*Math.PI);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(249,120,40,1.6*Math.PI,2*Math.PI);
+        ctx.stroke();
+
+        ctx.fillStyle="green";
+        ctx.beginPath();
+        ctx.ellipse(238,120,6,3,0,0,2*Math.PI);
+        ctx.fill();
+        
+        ctx.beginPath();
+        ctx.ellipse(262,120,6,3,0,0,2*Math.PI);
+        ctx.fill();
+
+        ctx.lineWidth="2";
+        ctx.beginPath();
+        ctx.moveTo(240,140);
+        ctx.lineTo(260,140);
+        ctx.stroke();
+
+        ctx.fillStyle="blue";
+        ctx.beginPath();
+        ctx.moveTo(200,175);
+        ctx.lineTo(150,300);
+        ctx.lineTo(200,200);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(300,175);
+        ctx.lineTo(350,300);
+        ctx.lineTo(300,200);
+        ctx.fill();
+
+        ctx.fillStyle="gray"
+        ctx.beginPath();
+        ctx.moveTo(200,325);
+        ctx.lineTo(190,475);
+        ctx.lineTo(265,325);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(300,325);
+        ctx.lineTo(310,475);
+        ctx.lineTo(235,325);
+        ctx.fill();
+
+    </script>
+
+</main>
+</body>
+</html>
