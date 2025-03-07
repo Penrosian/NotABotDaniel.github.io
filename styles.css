@@ -98,15 +98,25 @@ hr {
 #cyborgNewton {
 	max-width: 200px;
 	max-height: 200px;
+	border-radius: 10px;
 
 }
 #theRock {
+	border-radius: 10px;
+	scale: 1;
 	max-width: 200px;
 	max-height: 200px;
+	transition: scale 0.2s ease-in-out 0s, transform 0.2s ease-in-out 0s;
+
+}
+#theRock:hover {
+	scale: 1.1;
+	transform: rotate(2deg);
 
 }
 #roboVid {
 	max-height: 200px;
+	border-radius: 10px;
 
 }
 .midimg {
