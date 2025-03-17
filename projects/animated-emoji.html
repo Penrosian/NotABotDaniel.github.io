@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Daniel's Website</title>
+	<script src="js/init.js"></script>
+    <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <style>
+/* @keyframes closedBounce {
+    0%, 100% { transform: translateY(0); z-index: 4;}
+    25% { transform: translateY(-20px); z-index: 4;}
+    26% { transform: translateY(-25px); z-index: 1;}
+    75% { transform: translateY(-25px); z-index: 1;}
+    76% { transform: translateY(-20px); z-index: 4;}
+}
+@keyframes openBounce {
+    0%, 100% { transform: translateY(-20); z-index: 1;}
+    25% { transform: translateY(-22px); z-index: 1;}
+    26% { transform: translateY(-25px); z-index: 4;}
+    50% { transform: translateY(-45px); z-index: 4;}
+    75% { transform: translateY(-25px); z-index: 4;}
+    76% { transform: translateY(-22px); z-index: 1;}
+
+} */
+@keyframes closeMouth {
+    0%, 50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-25px);
+    }
+    51%, 99% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1
+    }
+}
+@keyframes openMouth {
+    0%, 48% {
+        opacity: 0;
+    }
+    75% {
+        transform: translateY(+25px);
+    }
+    49%, 99% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+    }
+
+}
+
+.emoji{
+    z-index: 2;
+    margin-top: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 300px;
+    background-image: radial-gradient(
+        #feca3e 58%,
+        #ff8000 80%
+    );
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 30px 30px 35px rgba(0,0,0,0.25);
+}
+.eye{
+    z-index: 3;
+    background-color: black;
+    border: 15px solid white;
+    position: absolute;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    overflow: hidden;
+}
+.left {
+    top: 90px;
+    left: 25%;
+}
+.right {
+    top: 90px;
+    right: 25%;
+}
+.closed{
+    height: 7px;
+    width: 140px;
+    background-color: black;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 80px;
+    
+    animation-name: closeMouth;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+
+}
+.open{
+    height: 70px;
+    width: 140px;
+    background: rgb(154,0,0);
+    background: linear-gradient(0deg, rgba(154,0,0,1) 0%, rgba(204,49,0,1) 100%);
+    border: 5px solid black;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 60px;
+    overflow: hidden;
+    border-radius:70px 70px 5px 5px;
+    
+    animation-name: openMouth;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+
+}
+.barf {
+
+
+
+}
+.b1{
+
+}
+.b2{
+
+}
+.b3{
+
+}
+.b4{
+
+}
+.b5{
+
+}
+.b6{
+
+}
+
+
+
+
+    </style>
+</head>
+<body>
+<header>
+	<h1>Animated Emoji</h1>
+
+</header>
+<nav>
+    <a href="index.html" id="homeLink">Back to Projects</a>
+
+</nav>
+<main>
+    <div class="emoji">
+        <div>
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+        </div>
+        <div>
+            <div class="closed"></div>
+            <div class="open"></div>
+        </div>
+        <div>
+            <div class="barf b1"></div>
+            <div class="barf b2"></div>
+            <div class="barf b3"></div>
+            <div class="barf b4"></div>
+            <div class="barf b5"></div>
+            <div class="barf b6"></div>
+        </div>
+    </div>
+
+</main>
+</body>
+</html>
