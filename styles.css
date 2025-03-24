@@ -90,6 +90,21 @@ hr {
 	padding-left:20px;
 
 }
+
+.pMain{
+	display: grid;
+    gap: 10px;
+	grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 900px) {
+    .pMain {
+        grid-template-columns: repeat(2, 1fr);
+    }
+@media (max-width: 600px) {
+    .pMain {
+        grid-template-columns: 1fr;
+    }
+}
 .project {
 	margin-top:40px;
 
