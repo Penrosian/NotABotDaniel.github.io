@@ -14,7 +14,7 @@ header {
 	margin-bottom:10px;
 }
 nav {
-	background-color:#780067;
+	background-color:#590046;
 	text-align:center;
 	display:grid;
 	grid-template-rows: 1fr 4fr;
@@ -23,25 +23,29 @@ nav {
 	margin-bottom:10px;
 
 }
+.navLink {
+	padding:7px;
+	color: #ef68ff;
+}
+.navLink {
+	text-decoration-line: none;
+}
 #homeLink {
 	grid-column-start:1;
 	grid-column-end:2;
 	grid-row-start:2;
-	padding:7px;
 
 }
 #journalLink {
 	grid-column-start:2;
 	grid-column-end:3;
 	grid-row-start:2;
-	padding:7px;
 
 }
 #projectsLink {
 	grid-column-start:3;
 	grid-column-end:4;
 	grid-row-start:2;
-	padding:7px;
 
 }
 main {
@@ -91,31 +95,43 @@ hr {
 
 }
 
-.pMain{
-	display: grid;
-    gap: 10px;
-	grid-template-columns: repeat(3, 1fr);
-}
-@media (max-width: 900px) {
-    .pMain {
-        grid-template-columns: repeat(2, 1fr);
-    }
-@media (max-width: 600px) {
-    .pMain {
-        grid-template-columns: 1fr;
-    }
-}
 .project {
 	margin-top:40px;
 
 }
 
-#cyborgNewton {
-	max-width: 200px;
-	max-height: 200px;
-	border-radius: 10px;
+#img_quote {
+	display: grid;
+    gap: 10px;
+    padding: 10px;
+	padding-right: 20px;
+	grid-template-columns: 1fr 3fr;
 
 }
+@media (max-width: 900px) {
+    #img_quote {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 600px) {
+    #img_quote {
+		grid-template-columns: 1fr;
+	}
+}
+#imageContainer {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#quoteContainer {
+	padding: 10px;
+
+}
+#cyborgNewton {
+	border-radius: 10px;
+	width: 100%;
+}
+
 #theRock {
 	border-radius: 10px;
 	scale: 1;
