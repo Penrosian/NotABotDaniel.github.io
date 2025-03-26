@@ -5,12 +5,7 @@
         <script src="../js/init.js"></script>
         <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon">
         <link rel="stylesheet" type="text/css" href="../styles.css">
-<style>
-#journalLink {
-	background-color:#000f1e;
 
-}
-</style>
 </head>
 <body>
 
@@ -22,9 +17,9 @@
 </header>
 
 <nav>
-	<a id="homeLink" href="../index.html">Home</a>
-	<a id="journalLink" href="index.html">Journal</a>
-	<a id="projectsLink" href="../projects/index.html">Projects</a>
+	<a id="homeLink" class="navLink" href="../index.html">Home</a>
+	<a id="journalLink" class="navLink currentPage" href="index.html">Journal</a>
+	<a id="projectsLink" class="navLink" href="../projects/index.html">Projects</a>
 
 </nav>
 
@@ -34,15 +29,16 @@
 	<p>(The first few entries are in markdown and are not functioning at the moment)</p>
 
 	<div>
-		<h3 id="EHead">Entries</h3>
+		<h2 class="h3" id="EHead">Entries</h2>
 	
 		<div id="entries">
-			<p>0 - <a href="entries/testmd.html">Test Page</a> (markdown)</p>
-			<p>1 - <a href="entries/thingy.html">Learning the Terminal</a> (markdown)</p>
-			<p>2 - <a href="entries/journal2.html">Taking Notes for Math Class</a> (markdown)</p>
-			<p>3 - <a href="entries/journal3.html">Designing a Site in Wordpress</a></p>
-			<p>4 - <a href="entries/journal4.html">Creating a website for Off The Pike</a></p>
-		
+			<ol type="1">
+				<li class="jEntry"><a href="entries/testmd.html">Test Page</a> (markdown)</li>
+				<li class="jEntry"><a href="entries/thingy.html">Learning the Terminal</a> (markdown)</li>
+				<li class="jEntry"><a href="entries/journal2.html">Taking Notes for Math Class</a> (markdown)</li>
+				<li class="jEntry"><a href="entries/journal3.html">Designing a Site in Wordpress</a></li>
+				<li class="jEntry"><a href="entries/journal4.html">Creating a website for Off The Pike</a></li>
+			</ol>
 		</div>
 
 	</div>
@@ -50,7 +46,7 @@
 </main>
 
 <footer>
-	<h3><strong>Syntax Validation Test</strong></h3>
+	<h2 class="h3"><strong>Syntax Validation Test</strong></h2>
 
 </footer>
 
