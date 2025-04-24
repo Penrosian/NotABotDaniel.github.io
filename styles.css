@@ -175,3 +175,8 @@ hr {
 	padding: 10px;
 
 }
+#myCanvas {
+    border: 2px solid white;
+    border-radius: 10px;
+
+}  
