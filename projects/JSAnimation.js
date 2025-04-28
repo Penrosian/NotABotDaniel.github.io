@@ -31,6 +31,7 @@ function createObject(x,y,s) {
     size.push(s);
 }
 
+// this function deals with wall colisions
 function updateObjects(item) {
     drawCircle(currentX[item],currentY[item],size[item]/2);
     if (frame < 1000) {
@@ -67,6 +68,7 @@ function updateObjects(item) {
     }
 }
 
+// these last 8 lines use trig to update the normal x and y speeds and then update the position
 function detectColisions() {
     for (let i = 0; i < currentX.length; i++) {
         for (let j = i + 1; j < currentX.length; j++) {
@@ -118,7 +120,7 @@ function animate() {
     if (frame == 0) {
         createObject(200,100,60);
     }
-    
+
     if (frame == 100) {
         createObject(200,100,40);
         createObject(200,100,20);
