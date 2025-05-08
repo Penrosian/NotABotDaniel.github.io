@@ -37,8 +37,40 @@ function drawBird(x,y,d) {
     ctx.lineTo(x3, y3);
     ctx.closePath();
     ctx.fill();
-    ctx.stroke();
 }
+
+function radiansToRGB(radians) {
+    // Normalize radians to range [0, 2π]
+    let normalized = (radians % (2 * Math.PI) + 2 * Math.PI) % (2 * Math.PI);
+
+    // Convert radians to hue (degrees) on the color wheel
+    let hue = (normalized / (2 * Math.PI)) * 360;
+
+    // Convert hue to RGB using HSL color model
+    return hslToRgb(hue, 1, 0.5);
+}
+
+function hslToRgb(h, s, l) {
+    let c = (1 - Math.abs(2 * l - 1)) * s;
+    let x = c * (1 - Math.abs((h / 60) % 2 - 1));
+    let m = l - c / 2;
+    
+    let [r, g, b] = 
+        h < 60 ? [c, x, 0] :
+        h < 120 ? [x, c, 0] :
+        h < 180 ? [0, c, x] :
+        h < 240 ? [0, x, c] :
+        h < 300 ? [x, 0, c] :
+                  [c, 0, x];
+
+    return (
+        "rgb(" +
+        Math.round((r + m) * 255) + "," +
+        Math.round((g + m) * 255) + "," +
+        Math.round((b + m) * 255) + ")")
+    ;
+}
+
 
 function spawnBirds() {
     for (let s = 0; s < birds; s++) {
@@ -95,25 +127,20 @@ function turnAway(i, c) {
 }
 
 function turnWithGroup(i) {
-    // Collect neighbors' distances with correct 2D array indexing
     let neighbors = [];
     for (let j = 0; j < birds; j++) {
-        if (j != i && distances[i][j] <= mimicDist) { // Exclude self and filter by distance
+        if (j != i && distances[i][j] <= mimicDist) {
             neighbors.push({ index: j, distance: distances[i][j] });
         }
     }
 
-    // Sort neighbors by distance and select the closest 'mimicked' ones
     neighbors.sort((a, b) => a.distance - b.distance);
     let closestNeighbors = neighbors.slice(0, mimicked);
 
-    // Ensure there are enough neighbors to calculate the average
     if (closestNeighbors.length === 0) return;
 
-    // Compute the average angle of the closest neighbors
     let avgAngle = closestNeighbors.reduce((sum, neighbor) => sum + angle[neighbor.index], 0) / closestNeighbors.length;
 
-    // Check the direction difference and adjust angle if needed
     if (Math.abs(angle[i] - avgAngle) > minDirDiff) {
         turnToward(angle[i], avgAngle);
     }
@@ -157,6 +184,7 @@ function updateBirds() {
         y[i] += speed * Math.sin(angle[i]);
         wrap(i);
 
+        ctx.fillStyle = radiansToRGB(angle[i]);
         drawBird(x[i],y[i],angle[i]);
     }
 }
@@ -167,7 +195,5 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-
-ctx.fillStyle = "red";
 spawnBirds();
 animate();
