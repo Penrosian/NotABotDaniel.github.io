@@ -64,6 +64,10 @@ td,th,table {
 }
 a {
 	color:magenta;
+	transition:color 0.2s ease-in-out 0s,
+}
+a:hover {
+	color:white;
 }
 hr {
 	color:cyan;
