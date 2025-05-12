@@ -9,18 +9,18 @@ const player = {
     x : canvas.width/2,
     y : canvas.height/2,
     dir : 0,
-    rSpeed : Math.PI / 30,
-    speed : 2,
+    rSpeed : Math.PI / 60,
+    speed : 4,
     size : 10,
-    view : Math.PI / 4
+    view : 3 * Math.PI / 16
 }
 
 const ray = {
     x : 0,
     y : 0,
-    speed : 1,
+    speed : 5,
     speed2 : 1,
-    rez : Math.PI / 200
+    rez : Math.PI / 400
 }
 
 const cellWidth = canvas.width / mazeSize;
@@ -150,22 +150,19 @@ function playerMazeColision() {
 }
 
 function castRay(a) {
-    console.log("cast ray");
     let dist = 0;
     ray.x = player.x;
     ray.y = player.y;
-    console.log("x: "+ray.x+", y: "+ray.y);
     if (maze[Math.floor(ray.x / cellWidth)][Math.floor(ray.y / cellHeight)]) {
         return 1;
     }
     while (dist < canvas.width + canvas.height) {
-        console.log("maze["+Math.floor(ray.x / cellWidth)+"]["+Math.floor(ray.y / cellHeight)+"]")
         if (maze[Math.floor(ray.x / cellWidth)][Math.floor(ray.y / cellHeight)]) {
-            while (dist < cellWidth + cellHeight) {
+            while (dist < canvas.width + canvas.height) {
                 ray.x -= Math.cos(a) * ray.speed2;
                 ray.y -= Math.sin(a) * ray.speed2;
                 dist -= ray.speed2;
-                if (!maze[ray.x][ray.y]) {
+                if (!maze[Math.floor(ray.x / cellWidth)][Math.floor(ray.y / cellHeight)]) {
                     return dist;
                 }
             }
@@ -173,20 +170,22 @@ function castRay(a) {
         ray.x += Math.cos(a) * ray.speed;
         ray.y += Math.sin(a) * ray.speed;
         dist += ray.speed;
-        console.log("x: "+ray.x+", y: "+ray.y);
-        console.log("dist: "+dist);
     }
 }
 
 function computeView() {
     console.log("compute view");
     for (let col = -player.view; col < player.view; col += ray.rez) {
-        vx = canvas.width / 2 + col;
-        vy = 50 * canvas.height / (castRay(player.dir + col) + 1);
-        ctx.moveTo(vx, vy);
-        ctx.lineTo(vx, -vy);
+        vx = (((col * canvas.width) / player.view) + canvas.width) / 2;
+        vy = (50 * canvas.height / (castRay(player.dir + col) + 1)) * (2 - (Math.cos(col)));
+        ctx.beginPath();
+        ctx.moveTo(vx, vy + canvas.height / 2);
+        ctx.lineTo(vx, -vy + canvas.height / 2);
         ctx.stroke();
-        console.log("view stroke");
+        if (col==0) {
+            console.log("dist: "+castRay(player.dir + col));
+            console.log("vy: "+vy);
+        }
     }
 }
 
@@ -200,13 +199,15 @@ document.addEventListener("keydown", (e) => {keys[e.key] = true});
 document.addEventListener("keyup", (e) => {keys[e.key] = false});
 
 function animate() {
-    if (frame < 10){
+    if (true){
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "white"
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
         updatePlayerPos();
         ctx.fillStyle = "blue";
-        drawMaze();
+        // drawMaze();
         ctx.fillStyle = "red";
-        drawBird(player.x, player.y, player.dir, player.size)
+        // drawBird(player.x, player.y, player.dir, player.size)
         ctx.fillStyle = "green";
         computeView();
     }
