@@ -1,30 +1,42 @@
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 
-const mazeSize = 6;
+const mazeSize = 20;
 const keys = {};
-const maze = Array(mazeSize).fill(false).map(() => Array(mazeSize).fill(false));
+const maze = Array(mazeSize + 1).fill(true).map(() => Array(mazeSize + 1).fill(true));
+
+const crossLength = Math.sqrt(canvas.width * canvas.width + canvas.height * canvas.height);
+
+const cellWidth = canvas.width / mazeSize;
+const cellHeight = canvas.height / mazeSize;
 
 const player = {
-    x : canvas.width/2,
-    y : canvas.height/2,
+    x : 2.5 * cellWidth,
+    y : 2.5 * cellHeight,
     dir : 0,
     rSpeed : Math.PI / 60,
-    speed : 4,
+    speed : 2,
     size : 10,
-    view : 3 * Math.PI / 16
+    view : 3 * Math.PI / 16,
+    perspective : 10
 }
 
 const ray = {
     x : 0,
     y : 0,
     speed : 5,
-    speed2 : 1,
-    rez : Math.PI / 400
+    speed2 : .2,
+    rez : Math.PI / 2000
 }
 
-const cellWidth = canvas.width / mazeSize;
-const cellHeight = canvas.height / mazeSize;
+const mouse = {
+    x : 2,
+    y : 2 ,
+    dir : 0,
+    dist : 0
+}
+
+let dirs = [0,1,2,3];
 
 let frame = 0;
 
@@ -52,29 +64,6 @@ function drawBird(x,y,d,size) {
     ctx.fill();
 }
 
-function createMaze() {
-    maze[0][0] = true;
-    maze[0][1] = true;
-    maze[0][2] = true;
-    maze[0][3] = true;
-    maze[0][4] = true;
-    maze[0][5] = true;
-    maze[1][5] = true;
-    maze[2][5] = true;
-    maze[3][5] = true;
-    maze[4][5] = true;
-    maze[5][5] = true;
-    maze[5][4] = true;
-    maze[5][3] = true;
-    maze[5][2] = true;
-    maze[5][1] = true;
-    maze[5][0] = true;
-    maze[4][0] = true;
-    maze[3][0] = true;
-    maze[2][0] = true;
-    maze[1][0] = true;
-}
-
 function drawMaze() {
     for (let row = 0; row < maze.length; row++) {
         for (let col = 0; col < maze[row].length; col++) {
@@ -83,6 +72,99 @@ function drawMaze() {
             }
         }
     }
+}
+
+function m(a,b) {
+    maze[a][b] = false;
+}
+
+function createMaze() {
+    for(let mx = 0; mx <= mazeSize; mx++) {
+        for(let my = 0; my <= mazeSize; my++) {
+            if((mx == 0) || (my == 0) || (mx == mazeSize) || (my == mazeSize)) {
+                m(mx,my);
+            }
+        }
+    }
+
+    m(2,2);
+
+    mazeTile();
+
+}
+
+function moveMouse(d) {
+    if (d == 0) {
+        m(mouse.x + 1,mouse.y);
+        mouse.x += 2;
+    } else if (d == 1) {
+        m(mouse.x,mouse.y - 1);
+        mouse.y -= 2;
+    } else if (d == 2) {
+        m(mouse.x - 1,mouse.y);
+        mouse.x -= 2;
+    } else if (d == 3) {
+        m(mouse.x,mouse.y + 1);
+        mouse.y += 2;
+    }
+    m(mouse.x,mouse.y);
+}
+
+function mazeTile() {
+    moveMouse(mouse.dir);
+    mouse.dist++;
+
+    dirs = [0,1,2,3];
+    nextTile(mouse.dir);
+
+    if (mouse.dir + 2 > 3) {
+        moveMouse(mouse.dir - 2);
+    } else {
+        moveMouse(mouse.dir + 2);
+    }
+    mouse.dist--
+}
+
+function nextTile(startDir) {
+    for(let t = 0; t < 4; t++) {
+        testTile();
+    }
+    dirs = [0,1,2,3];
+    for(let t = 0; t < 4; t++) {
+        testTile();
+    }
+    dirs = [0,1,2,3];
+    for(let t = 0; t < 4; t++) {
+        testTile();
+    }
+    mouse.dir = startDir;
+}
+
+function testTile() {
+    let testDir = dirs[Math.floor(Math.random() * dirs.length)];
+
+    if (testDir == 0) {
+        if (maze[mouse.x + 2][mouse.y]) {
+            mouse.dir = testDir;
+            mazeTile();
+        }
+    } else if (testDir == 1) {
+        if (maze[mouse.x][mouse.y - 2]) {
+            mouse.dir = testDir;
+            mazeTile();
+        }
+    } else if (testDir == 2) {
+        if (maze[mouse.x - 2][mouse.y]) {
+            mouse.dir = testDir;
+            mazeTile();
+        }
+    } else if (testDir == 3) {
+        if (maze[mouse.x][mouse.y + 2]) {
+            mouse.dir = testDir;
+            mazeTile();
+        }
+    }
+    dirs.splice(dirs.indexOf(testDir), 1);
 }
 
 function controlls() {
@@ -149,16 +231,29 @@ function playerMazeColision() {
     }
 }
 
+function updatePlayerPos() {
+    controlls();
+    playerWallColision();
+    playerMazeColision();
+}
+
 function castRay(a) {
     let dist = 0;
     ray.x = player.x;
     ray.y = player.y;
+
     if (maze[Math.floor(ray.x / cellWidth)][Math.floor(ray.y / cellHeight)]) {
         return 1;
     }
-    while (dist < canvas.width + canvas.height) {
-        if (maze[Math.floor(ray.x / cellWidth)][Math.floor(ray.y / cellHeight)]) {
-            while (dist < canvas.width + canvas.height) {
+
+    for(let r=0; r< 5; r++) {
+        ray.x += Math.cos(a) * ray.speed;
+        ray.y += Math.sin(a) * ray.speed;
+        dist += ray.speed;
+    }
+    while (dist < crossLength * 1.2) {
+        if (maze[Math.floor(ray.x / cellWidth)]?.[Math.floor(ray.y / cellHeight)]) {
+            while (dist < crossLength * 1.2) {
                 ray.x -= Math.cos(a) * ray.speed2;
                 ray.y -= Math.sin(a) * ray.speed2;
                 dist -= ray.speed2;
@@ -176,12 +271,30 @@ function castRay(a) {
 function computeView() {
     console.log("compute view");
     for (let col = -player.view; col < player.view; col += ray.rez) {
+        let dist = castRay(player.dir + col);
         vx = (((col * canvas.width) / player.view) + canvas.width) / 2;
-        vy = (50 * canvas.height / (castRay(player.dir + col) + 1)) * (2 - (Math.cos(col)));
+        vy = (player.perspective * canvas.height / (dist + 1)) * (2 - (Math.cos(col)));
+        
+        let color = 255 * (-dist / crossLength + 1);
+
+        ctx.strokeStyle = "blue";
         ctx.beginPath();
-        ctx.moveTo(vx, vy + canvas.height / 2);
+        ctx.moveTo(vx, 0);
         ctx.lineTo(vx, -vy + canvas.height / 2);
         ctx.stroke();
+
+        ctx.strokeStyle = "rgb("+color+","+color+","+color+")";
+        ctx.beginPath();
+        ctx.moveTo(vx, -vy + canvas.height / 2);
+        ctx.lineTo(vx, vy + canvas.height / 2);
+        ctx.stroke();
+
+        ctx.strokeStyle = "green";
+        ctx.beginPath();
+        ctx.moveTo(vx, vy + canvas.height / 2);
+        ctx.lineTo(vx, canvas.height);
+        ctx.stroke();
+
         if (col==0) {
             console.log("dist: "+castRay(player.dir + col));
             console.log("vy: "+vy);
@@ -189,26 +302,18 @@ function computeView() {
     }
 }
 
-function updatePlayerPos() {
-    controlls();
-    playerWallColision();
-    playerMazeColision();
-}
-
-document.addEventListener("keydown", (e) => {keys[e.key] = true});
-document.addEventListener("keyup", (e) => {keys[e.key] = false});
+document.addEventListener("keydown", (e) => {keys[e.key] = true; e.preventDefault()});
+document.addEventListener("keyup", (e) => {keys[e.key] = false; e.preventDefault()});
 
 function animate() {
     if (true){
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = "white"
+        ctx.fillStyle = "gray";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-        updatePlayerPos();
-        ctx.fillStyle = "blue";
+        // ctx.fillStyle = "gray";
+        // ctx.fillRect(0,canvas.height/2, canvas.width, canvas.height);
         // drawMaze();
-        ctx.fillStyle = "red";
-        // drawBird(player.x, player.y, player.dir, player.size)
-        ctx.fillStyle = "green";
+        updatePlayerPos();
         computeView();
     }
     frame++;
